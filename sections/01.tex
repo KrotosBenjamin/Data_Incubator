@@ -1,0 +1,56 @@
+\chapter{Datasets}
+
+Website for data import, wrangling and visualization in R: \href{http://www.computerworld.com/article/2921176/business-intelligence/great-r-packages-for-data-import-wrangling-visualization.html}{computerworld}.\\
+
+\section{Healthcare}
+Key website for health data: \href{https://www.nlm.nih.gov/hsrinfo/datasites.html}{HSRIC}.\\
+\subsection{Behavioral Risk Factor}
+The data can be downloaded as csv file:
+\begin{enumerate}
+\item \href{https://chronicdata.cdc.gov/api/views/xuxn-8kju/rows.csv?accessType=DOWNLOAD}{life-quality}. Health related quality of life survey.
+\item \href{https://chronicdata.cdc.gov/api/views/hn4x-zwk7/rows.csv?accessType=DOWNLOAD}{nutrition}. Very recent data.
+\item \href{ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/CHDI/chsi_dataset.zip}{indicators}. This is a zipped file. 
+\end{enumerate}
+
+\textbf{Note:} There is metadata (json) for the above datasets.
+
+I'm not going to want to save this data to my hard drive, at least not initially. So I can use R packages to download directly from the website.
+
+Example:
+\begin{verbatim}
+library(data.table)
+mydat <- fread("https://website.url.here")
+\end{verbatim}
+
+\subsection{Healthcare Spending}
+
+\begin{enumerate}
+\item \href{https://meps.ahrq.gov/mepsweb/data_stats/download_data_files.jsp}{raw data}. This is in json.
+\item \href{https://aspe.hhs.gov/system/files/aspe-files/253321/dec2016statebystate.xlsx}{ACA}. This is xlsx file.
+\item \href{http://www.commonwealthfund.org/~/media/Files/2017%20State%20Scorecard/Public%20Use%20File/2017_state_scorecard_public_use_data_file.xlsx}{state performance}. This is also xlsx file. 
+\end{enumerate}
+
+\section{Video Gaming}
+Changing topics to video gaming, but don't want to lose the information above.
+
+I first download the available excel file for game rating, and convert to csv. Next, I need the sales data for these games.
+
+Below are the datasets including game ratings and unit sales. Furthermore, I have additional datasets for franchise information and best-selling video game based on money earned and not units sold. This is a significantly smaller dataset.
+
+\begin{enumerate}
+\item \href{http://www.gamerankings.com/sites/1188-ign/index.html?platform=116}{game rankings}
+\item \href{http://www.vgchartz.com/gamedb/?name=&publisher=&platform=&genre=&minSales=0&results=1000}{game database}
+\item \href{https://www.dropbox.com/s/09sh15zbtwg9eu3/gamedata.xlsx}{xlsx game ranking}
+\item \href{http://vgsales.wikia.com/wiki/Video_Game_Sales_Wiki}{vg wiki}
+  \begin{enumerate}
+  \item \href{http://vgsales.wikia.com/wiki/Best_selling_game_franchises}{highest franchises}
+  \item \href{http://vgsales.wikia.com/wiki/Best_selling_games_worldwide}{best-selling vg}
+  \item \href{http://vgsales.wikia.com/wiki/Most_expensive_games}{most expensive vg}
+  \item \href{http://vgsales.wikia.com/wiki/Pok%C3%A9mon#Pok.C3.A9mon_sales_figure}{pokemon}
+  \item \href{http://vgsales.wikia.com/wiki/Sonic}{sonic the hedgehog}
+  \item \href{http://vgsales.wikia.com/wiki/Mario}{mario}
+  \item \href{http://vgsales.wikia.com/wiki/Grand_Theft_Auto}{gta: grand theft auto}
+  \item \href{http://vgsales.wikia.com/wiki/Halo}{halo}
+  \end{enumerate}
+\end{enumerate}
+
